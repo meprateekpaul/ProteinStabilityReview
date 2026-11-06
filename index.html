@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Computational Models for Protein Stability Prediction: An interactive web portal, comprehensive benchmark hub, and literature companion.">
+  <meta name="author" content="Prateek Paul et al., IIIT Delhi">
+  <title>Models for Protein Stability Prediction | Interactive Benchmark Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Institutional Top Bar (Above Educational Design System) -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="inst-tag">IIIT-Delhi</span>
+        <span>Department of Computational Biology</span>
+        <span class="inst-divider">•</span>
+        <span class="inst-tag">KTH Stockholm</span>
+        <span>Division of Glycoscience</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://neurocare-elab.iiitd.edu.in/" target="_blank" rel="noopener" class="top-bar-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span>Neurocare-eLAB</span>
+        </a>
+        <a href="mailto:arul.murugan@iiitd.ac.in" class="top-bar-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Contact PI</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-action);"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Protein Stability <span style="color:var(--blue-action);">Review</span></span>
+        <span class="brand-badge">Companion Portal</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#paradigms">Paradigms</a></li>
+          <li><a href="#tools">Tools Directory</a></li>
+          <li><a href="#datasets">Datasets</a></li>
+          <li><a href="#tables">Master Tables</a></li>
+          <li><a href="#pitfalls">Pitfalls Guide</a></li>
+          <li><a href="#future">Future Directions</a></li>
+          <li><a href="#labs">Research Labs</a></li>
+          <li><a href="#cite">Cite Paper</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#tables" class="btn-primary">
+          <span>Explore Tables</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>Open-Access Research Portal &amp; Benchmark Hub</span>
+      </div>
+      <h1 class="hero-title">A Contemporary Review on Physics-based and Data-Driven Models for Protein Stability Prediction</h1>
+      
+      <!-- Authors & Affiliations -->
+      <div class="authors-block">
+        <div class="authors-names">
+          <span class="author-name">Prateek Paul<sup>a</sup></span>,
+          <span class="author-name">Pallavi Patel<sup>a</sup></span>,
+          <span class="author-name">Dr. Jaspreet Kaur Dhanjal<sup>a</sup></span>,
+          <span class="author-name">Dr. Vaibhav Srivastava<sup>b</sup></span>, and
+          <span class="author-name corresponding">Dr. N Arul Murugan<sup>a,*</sup></span>
+        </div>
+        <div class="affiliations-list">
+          <div class="affil-entry">
+            <span class="affil-marker">a</span>
+            <span>Department of Computational Biology, Indraprastha Institute of Information Technology Delhi, New Delhi, India. 110020</span>
+          </div>
+          <div class="affil-entry">
+            <span class="affil-marker">b</span>
+            <span>Department of Engineering Sciences in Chemistry, Biotechnology and Health, Division of Glycoscience, KTH Royal Institute of Technology, SE-100 44 Stockholm, Sweden.</span>
+          </div>
+          <div class="affil-entry corresp-note">
+            <span class="affil-marker">*</span>
+            <span>Corresponding author email: <a href="mailto:arul.murugan@iiitd.ac.in" style="color:var(--espresso-dark); font-weight:600;">arul.murugan@iiitd.ac.in</a></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-subtitle">
+        A systematic taxonomy, algorithmic comparison, and critical benchmark analysis of computational methods for predicting mutation-induced free energy changes ($\Delta\Delta G$) from 1990 to 2026.
+      </p>
+
+      <!-- Publication Pending Notice -->
+      <div class="publication-notice" style="margin: 1.25rem 0 1rem; padding: 0.85rem 1.25rem; background: rgba(204, 111, 0, 0.12); border-left: 4px solid var(--amber-gold, #CC6F00); border-radius: 6px; display: inline-flex; align-items: center; gap: 0.75rem; text-align: left; max-width: 820px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CC6F00" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span style="font-size: 0.95rem; color: #4D2A00; font-weight: 500; line-height: 1.5;">
+          <strong>Publication Status:</strong> The peer-reviewed publication of this review article is currently pending. The official journal link and full text will be added soon.
+        </span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#tools" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search 35+ Tools</span>
+        </a>
+        <a href="#datasets" class="btn-secondary" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          <span>Benchmark Datasets</span>
+        </a>
+      </div>
+
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">35+</div>
+          <div class="stat-label">Computational Predictors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Architectural Paradigms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Thermodynamic Benchmarks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Peer-Reviewed / DOI Verified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paradigms & Evolution Section -->
+  <section id="paradigms" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Historical Taxonomy & Paradigms</span>
+        <h2 class="section-title">The Evolution of Stability Prediction</h2>
+        <p class="section-desc">
+          From early empirical force fields and statistical potentials to geometric deep learning and billion-parameter foundation models.
+        </p>
+      </div>
+
+      <!-- Figure 1 Viewer -->
+      <div class="figure-container">
+        <div class="figure-image-wrap">
+          <img src="figures/fig1_evolution.jpg" alt="Figure 1: Evolution of protein stability prediction methods from 1990 to 2026" class="figure-image" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          <strong>Figure 1 | Historical Evolution of Protein Stability Prediction (1990–2026).</strong> 
+          Seven methodological generations, each marked on the axis by its start year: physics-based simulation; empirical force fields and statistical potentials (FoldX, CUPSAT, PoPMuSiC; 2005&ndash;2011); classical machine learning (I-Mutant, MUpro, AUTO-MUTE, STRUM; 2005&ndash;2016); deep learning (DeepDDG, a feed-forward residue-pair network, and ThermoNet, a 3D-voxel CNN; 2019&ndash;2020); protein language models (ESM-2, ProtT5, xTrimoPGLM; from 2021); graph and network models (ThermoMPNN, Stability Oracle, Pythia, GeoDDG, and the Gaussian elastic network PSP-GNM; 2022&ndash;2025); and hybrid and foundation models (SPURS, IFUM, ESM-MSR, SaProt-&Delta;G; 2025&ndash;2026).
+        </div>
+      </div>
+
+      <!-- Figure 2 Viewer -->
+      <div class="figure-container">
+        <div class="figure-image-wrap">
+          <img src="figures/fig2_benchmarking.jpg" alt="Figure 2: Systematic benchmarking pitfalls in protein stability prediction" class="figure-image" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          <strong>Figure 2 | Systematic Benchmarking Pitfalls in Protein Stability Prediction.</strong> 
+          Four ways a train/test split inflates reported accuracy: reverse-mutation leakage, which exploits the thermodynamic antisymmetry &Delta;&Delta;G<sub>AB</sub> = &minus;&Delta;&Delta;G<sub>BA</sub>; homolog contamination between highly similar training and test proteins; train/test overlap, where different mutations of the same protein fall on both sides of the split; and measurement heterogeneity, where the same mutation carries different &Delta;&Delta;G values under different denaturants and pH. Benchmark inflation and the CASP-style partitioning that would mitigate these issues are summarised in the lower panels.
+        </div>
+      </div>
+
+      <!-- Figure 3 Viewer -->
+      <div class="figure-container">
+        <div class="figure-image-wrap">
+          <img src="figures/fig3_paradigms.jpg" alt="Figure 3: Comparative Architecture Paradigms" class="figure-image" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          <strong>Figure 3 | Comparative Architecture Paradigms for Mutation Stability Prediction.</strong> 
+          Sequence-only predictors (PROSTATA, DDGemb, DVE-stability) need no structure but cannot see the local structural environment; structure-only predictors (ThermoMPNN, ThermoNet, DeepDDG) resolve the mutation site in 3D but need an experimental or predicted structure; hybrid predictors (SPURS, IFUM, GraphESMStable) combine language-model representations with structure-derived features, at the cost of model complexity and heavier inputs.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Directory Section -->
+  <section id="tools" class="section" style="background-color: var(--bg-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Repository</span>
+        <h2 class="section-title">Computational Tools Directory</h2>
+        <p class="section-desc">
+          Browse, filter, and compare computational stability models with authentic peer-reviewed citations, architecture summaries, and verified performance metrics.
+        </p>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="explorer-toolbar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="tool-search-input" class="search-input" placeholder="Search by tool name, architecture, author, or keyword (e.g., GNN, ESM, FoldX, ThermoMPNN)...">
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Filter by Paradigm:</span>
+          <button class="filter-chip active" data-category="all">All Models</button>
+          <button class="filter-chip" data-category="empirical">Empirical / Potentials</button>
+          <button class="filter-chip" data-category="ml">Classical ML</button>
+          <button class="filter-chip" data-category="cnn">3D CNNs</button>
+          <button class="filter-chip" data-category="gnn">Geometric GNNs</button>
+          <button class="filter-chip" data-category="plm">Language Models</button>
+          <button class="filter-chip" data-category="hybrid">Hybrid / Inverse Folding</button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div id="tools-grid" class="tools-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Benchmark Datasets Hub -->
+  <section id="datasets" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Data Standardization</span>
+        <h2 class="section-title">Benchmark Datasets & Databases Hub</h2>
+        <p class="section-desc">
+          A critical analysis of canonical thermodynamic databases, regression benchmarks, and high-throughput experimental datasets.
+        </p>
+      </div>
+
+      <div id="datasets-grid" class="datasets-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Interactive Tables -->
+  <section id="tables" class="section" style="background-color: var(--bg-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Comparative Benchmarks</span>
+        <h2 class="section-title">Master Comparative Tables</h2>
+        <p class="section-desc">
+          Direct, interactive web transcriptions of Tables 1 through 5 from the manuscript. Click headers to sort, search across cells, or export to CSV.
+        </p>
+      </div>
+
+      <div class="table-controls">
+        <div class="table-tabs">
+          <button class="table-tab-btn active" data-tab="tab1" onclick="switchTable('tab1')">Table 1: All Tools</button>
+          <button class="table-tab-btn" data-tab="tab2" onclick="switchTable('tab2')">Table 2: Hybrid DL</button>
+          <button class="table-tab-btn" data-tab="tab3" onclick="switchTable('tab3')">Table 3: PLMs</button>
+          <button class="table-tab-btn" data-tab="tab4" onclick="switchTable('tab4')">Table 4: 2024–2026 Models</button>
+          <button class="table-tab-btn" data-tab="tab5" onclick="switchTable('tab5')">Table 5: Pros & Cons</button>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <input type="text" id="table-search-input" class="search-input" style="padding: 0.45rem 0.85rem; width: 220px; font-size: 0.875rem;" placeholder="Filter rows...">
+          <button class="btn-secondary" onclick="exportCurrentTableCSV()" style="padding: 0.45rem 0.85rem; font-size: 0.875rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Export CSV</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div style="padding: 1rem 1.25rem; font-weight: 700; color: var(--navy-deep); border-bottom: 1px solid var(--border-color); background: var(--bg-surface-alt);" id="table-caption">
+          Table 1: Overview of Computational Tools & Deep Learning Frameworks
+        </div>
+        <div id="table-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodological Pitfalls Guide -->
+  <section id="pitfalls" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Critical Methodology</span>
+        <h2 class="section-title">The 5 Golden Rules of Stability Benchmarking</h2>
+        <p class="section-desc">
+          Key failure modes and methodological artifacts identified in the review that lead to inflated performance claims in literature.
+        </p>
+      </div>
+
+      <div class="pitfalls-grid">
+        <div class="pitfall-card">
+          <div class="pitfall-num">01</div>
+          <h3 class="pitfall-title">Prevent Reverse-Mutation Leakage</h3>
+          <p class="pitfall-body">
+            Thermodynamic reversibility requires $\Delta\Delta G_{AB} = -\Delta\Delta G_{BA}$. If forward ($A \to B$) and reverse ($B \to A$) variants are split across train and test partitions, the model easily memorizes the inverse rather than learning genuine stability physics.
+          </p>
+        </div>
+
+        <div class="pitfall-card">
+          <div class="pitfall-num">02</div>
+          <h3 class="pitfall-title">Enforce Strict Homology Splits</h3>
+          <p class="pitfall-body">
+            Splitting datasets by random mutation assignment rather than protein family clusters allows models to overfit to specific protein scaffolds. Test sets must enforce &lt;25% sequence identity to training sets to test true generalizability.
+          </p>
+        </div>
+
+        <div class="pitfall-card">
+          <div class="pitfall-num">03</div>
+          <h3 class="pitfall-title">Preserve Physical Antisymmetry</h3>
+          <p class="pitfall-body">
+            Most supervised models exhibit severe prediction bias toward destabilizing scores ($\Delta\Delta G &lt; 0$). Models must be audited on symmetric datasets like Ssym and S669 to confirm that $\Delta\Delta G_{AB} + \Delta\Delta G_{BA} \approx 0$.
+          </p>
+        </div>
+
+        <div class="pitfall-card">
+          <div class="pitfall-num">04</div>
+          <h3 class="pitfall-title">Account for Assay Heterogeneity</h3>
+          <p class="pitfall-body">
+            Thermodynamic free energy depends strongly on temperature, pH, and denaturant choice (urea vs. GdnHCl). Conflating different experimental conditions without explicitly conditioning on pH/temperature introduces irreducible label noise.
+          </p>
+        </div>
+
+        <div class="pitfall-card">
+          <div class="pitfall-num">05</div>
+          <h3 class="pitfall-title">Report Spearman & MAE Alongside PCC</h3>
+          <p class="pitfall-body">
+            Pearson Correlation Coefficient (PCC) is highly sensitive to extreme outliers and data distribution skews. Authors must report Spearman Rank Correlation (SRCC) and Mean Absolute Error (MAE in kcal/mol) for reliable evaluation.
+          </p>
+        </div>
+
+        <div class="pitfall-card">
+          <div class="pitfall-num">06</div>
+          <h3 class="pitfall-title">Distinguish Zero-Shot vs Fine-Tuning</h3>
+          <p class="pitfall-body">
+            Zero-shot predictions from foundation models (ESM-2, SaProt, Pythia) reflect general evolutionary and structural priors, whereas supervised heads risk learning dataset-specific artifacts. Both evaluation regimes must be clearly delineated.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Directions Section -->
+  <section id="future" class="section" style="background-color: var(--bg-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Next-Generation AI</span>
+        <h2 class="section-title">Future Research Frontiers</h2>
+        <p class="section-desc">
+          Strategic opportunities for expanding computational stability modeling in the era of generative biology.
+        </p>
+      </div>
+
+      <!-- Figure 4 Viewer -->
+      <div class="figure-container">
+        <div class="figure-image-wrap">
+          <img src="figures/fig4_future.jpg" alt="Figure 4: Future Directions in Computational Stability Prediction" class="figure-image" loading="lazy">
+        </div>
+        <div class="figure-caption">
+          <strong>Figure 4 | Strategic Frontiers for Computational Protein Stability.</strong> 
+          Six future directions: foundation models, multimodal learning, generative design, active learning, explainable and uncertainty-aware AI, and digital protein twins.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Laboratories & Collaborations Section -->
+  <section id="labs" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic &amp; Research Infrastructure</span>
+        <h2 class="section-title">Research Laboratories &amp; Collaborations</h2>
+        <p class="section-desc">
+          This comprehensive benchmark review, taxonomy, and companion portal are spearheaded by the Computational Biology Group at IIIT Delhi in collaboration with KTH Royal Institute of Technology.
+        </p>
+      </div>
+
+      <div class="labs-grid">
+        <div class="lab-card primary-lab">
+          <div class="lab-badge">Lead Laboratory</div>
+          <h3 class="lab-title">Neurocare-eLAB</h3>
+          <p class="lab-pi"><strong>Principal Investigator:</strong> Dr. N Arul Murugan</p>
+          <p class="lab-affil">Department of Computational Biology, Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)</p>
+          <p class="lab-desc">
+            Focuses on molecular biophysics, biomolecular dynamics, protein thermodynamic stability modeling, computer-aided drug design, and computational neurotherapeutics.
+          </p>
+          <a href="https://neurocare-elab.iiitd.edu.in/" target="_blank" rel="noopener" class="btn-lab-link">
+            <span>Visit Neurocare-eLAB Website</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-badge">Collaborating Lab</div>
+          <h3 class="lab-title">The Translational Biology Laboratory</h3>
+          <p class="lab-pi"><strong>Principal Investigator:</strong> Dr. Jaspreet Kaur Dhanjal</p>
+          <p class="lab-affil">Department of Computational Biology, Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)</p>
+          <p class="lab-desc">
+            Focuses on structural bioinformatics, molecular recognition, translational therapeutics, mutation impact profiling, and macromolecular interactions.
+          </p>
+          <a href="https://dhanjal-lab.iiitd.edu.in/" target="_blank" rel="noopener" class="btn-lab-link">
+            <span>Visit Lab Website</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-badge">International Collaboration</div>
+          <h3 class="lab-title">Division of Glycoscience</h3>
+          <p class="lab-pi"><strong>Principal Investigator:</strong> Dr. Vaibhav Srivastava</p>
+          <p class="lab-affil">Department of Engineering Sciences in Chemistry, Biotechnology and Health, KTH Royal Institute of Technology, Stockholm, Sweden</p>
+          <p class="lab-desc">
+            Pioneers applied biocatalysis, enzyme thermodynamics and engineering, mass-spectrometry proteomics, and carbohydrate-active enzyme stabilization.
+          </p>
+          <a href="https://www.kth.se/" target="_blank" rel="noopener" class="btn-lab-link">
+            <span>Visit KTH Royal Institute</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-badge">Departmental Hub</div>
+          <h3 class="lab-title">Department of Computational Biology</h3>
+          <p class="lab-pi"><strong>Academic Department:</strong> IIIT-Delhi</p>
+          <p class="lab-affil">Indraprastha Institute of Information Technology Delhi, New Delhi, India</p>
+          <p class="lab-desc">
+            Interdisciplinary academic center conducting cutting-edge research in machine learning, computational biophysics, structural bioinformatics, and systems medicine.
+          </p>
+          <a href="https://cb.iiitd.ac.in/" target="_blank" rel="noopener" class="btn-lab-link">
+            <span>Visit Department Website</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation Section -->
+  <section id="cite" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic Citation</span>
+        <h2 class="section-title">Cite This Review</h2>
+        <p class="section-desc">
+          If this repository, benchmark taxonomy, or review aids your research, please cite the manuscript.
+        </p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm); border-top: 3px solid var(--amber-gold);">
+        <p style="font-size: 1rem; color: var(--navy-deep); margin-bottom: 0.5rem; line-height: 1.6;">
+          <strong>Paul, P., Patel, P., Dhanjal, J. K., Srivastava, V., &amp; Murugan, N. A. (2026).</strong> "A Contemporary Review on Physics-based and Data-Driven Models for Protein Stability Prediction." <em>Submitted for publication</em>.
+        </p>
+        <p style="margin: 0.5rem 0 1rem; font-size: 0.9rem; color: #CC6F00; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#CC6F00" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Publication to this review is pending — official journal link and DOI will be added soon.</span>
+        </p>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">BibTeX Format</span>
+          <button class="btn-icon-xs" onclick="copyMainBibTeX()">
+            <span>Copy BibTeX</span>
+          </button>
+        </div>
+
+        <pre id="main-paper-bibtex" class="modal-code-block" style="max-height: 180px;">@article{Paul2026ProteinStabilityReview,
+  author = {Paul, Prateek and Patel, Pallavi and Dhanjal, Jaspreet Kaur and Srivastava, Vaibhav and Murugan, N. Arul},
+  title = {A Contemporary Review on Physics-based and Data-Driven Models for Protein Stability Prediction},
+  journal = {Submitted for publication},
+  year = {2026}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Protein Stability Review</div>
+          <p style="margin-bottom: 1rem; max-width: 420px; line-height: 1.6;">
+            An open scientific companion portal mapping computational protein stability prediction methods, curated thermodynamic datasets, and machine learning architectures for our contemporary review.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--amber-cream); margin-bottom: 0.5rem;">
+            Lead Laboratory: <a href="https://neurocare-elab.iiitd.edu.in/" target="_blank" rel="noopener" style="color:var(--amber-gold); text-decoration:underline;">Neurocare-eLAB</a> (Dr. N Arul Murugan)
+          </p>
+          <p style="font-size: 0.8rem; color: rgba(249, 230, 168, 0.75);">
+            Maintained by Department of Computational Biology, IIIT Delhi &amp; Division of Glycoscience, KTH Stockholm. Released under CC-BY 4.0.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portal Sections</h4>
+          <ul>
+            <li><a href="#paradigms">Historical Paradigms</a></li>
+            <li><a href="#tools">Tools Directory</a></li>
+            <li><a href="#datasets">Benchmark Datasets</a></li>
+            <li><a href="#tables">Comparative Tables</a></li>
+            <li><a href="#pitfalls">Pitfalls Guide</a></li>
+            <li><a href="#labs">Research Laboratories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Research &amp; Lab Links</h4>
+          <ul>
+            <li><a href="https://neurocare-elab.iiitd.edu.in/" target="_blank" rel="noopener">Neurocare-eLAB Website</a></li>
+            <li><a href="https://cb.iiitd.ac.in/" target="_blank" rel="noopener">IIITD Computational Biology</a></li>
+            <li><a href="https://dhanjal-lab.iiitd.edu.in/" target="_blank" rel="noopener">Translational Biology Lab</a></li>
+            <li><a href="https://www.kth.se/" target="_blank" rel="noopener">KTH Royal Institute of Technology</a></li>
+            <li><span style="color:var(--text-subtle); font-size: 0.85rem; opacity: 0.85;">Manuscript: Publication Pending</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Department of Computational Biology, IIIT Delhi &amp; Neurocare-eLAB. All rights reserved. Peer-reviewed tools and datasets remain copyright of their respective authors.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BibTeX Modal Window -->
+  <div id="bibtex-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">BibTeX Citation</h3>
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre id="modal-code" class="modal-code-block"></pre>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal()">Close</button>
+        <button class="btn-primary" onclick="copyModalBibTeX()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Copy to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script>
+    function copyMainBibTeX() {
+      const code = document.getElementById("main-paper-bibtex").textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast("Main paper BibTeX copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>

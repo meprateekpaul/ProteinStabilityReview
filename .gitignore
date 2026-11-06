@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+overleaf/
+*.tex
+*.bib
+*.cls
+*.bst
+*.sty
