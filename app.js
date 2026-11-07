@@ -45,7 +45,7 @@ const toolsData = [
     paradigm: "Structure-based",
     architecture: "13 knowledge-based statistical potentials weighted by solvent accessibility",
     datasets: "Thousands of experimental ΔΔG values (ProTherm)",
-    metrics: "PCC ~0.60–0.67 (~0.80 after 10% outlier removal)",
+    metrics: "PCC 0.63 (5-fold CV); 0.79 excluding 10% outliers",
     authors: "Dehouck, Kwasigroch, Gilis, & Rooman",
     journal: "BMC Bioinformatics",
     doi: "10.1186/1471-2105-12-151",
@@ -479,6 +479,29 @@ const toolsData = [
   year = {2024},
   doi = {10.1038/s41467-024-49780-2}
 }`
+  },,
+  {
+    id: "mutateeverything",
+    name: "MutateEverything",
+    full_form: "MutateEverything",
+    year: 2024,
+    category: "hybrid",
+    category_label: "PLM + Structure Hybrid",
+    paradigm: "Sequence + Structure",
+    architecture: "Parallel decoding on an ESM-2 and AlphaFold backbone: all single and double mutations scored in one forward pass",
+    datasets: "Mega-scale cDNA proteolysis dataset",
+    metrics: "Spearman ρ 0.56 (S669, single mutations)",
+    authors: "Ouyang-Zhang, Diaz, Qu, et al.",
+    journal: "arXiv",
+    doi: "10.48550/arXiv.2311.17316",
+    doi_url: "https://doi.org/10.48550/arXiv.2311.17316",
+    bibtex: `@article{OuyangZhang2023MutateEverything,
+  author = {Ouyang-Zhang, Jeffrey and Diaz, Daniel J. and Qu, Yan and Dimakis, Alex and Ellington, Andrew D.},
+  title = {MutateEverything: Rapid Protein Mutational Scanning via Parallel Sequence-Structure Decoding},
+  journal = {arXiv preprint arXiv:2311.17316},
+  year = {2023},
+  doi = {10.48550/arXiv.2311.17316}
+}`
   },
   {
     id: "geoddg",
@@ -516,7 +539,7 @@ const toolsData = [
     paradigm: "Structure-based",
     architecture: "Self-supervised GNN with masked residue-type pretraining; zero-shot without supervised head",
     datasets: "Pretrained on PDB structures",
-    metrics: "Zero-shot prediction; avoids experimental label noise",
+    metrics: "PCC ~0.60; Spearman ρ ~0.62 (S2648 zero-shot)",
     authors: "Sun, Zhu, Cui, & Wu",
     journal: "The Innovation",
     doi: "10.1016/j.xinn.2024.100750",
@@ -1063,8 +1086,9 @@ const tablesData = {
       ["Language Model", "ProteinBERT", "Protein Bidirectional Encoder Representations", "BERT-like transformer for protein representation learning", "About 106M protein sequences (UniProt-derived)", "Spearman ρ 0.76 (TAPE protease stability; not ΔΔG)", "Brandes et al. (2022) <a href=\"https://doi.org/10.1093/bioinformatics/btac020\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1093/bioinformatics/btac020</a>"],
       ["Language Model", "xTrimoPGLM", "Extreme Protein General Language Model", "100B parameter decoder-style transformer architecture", "Billion-scale protein sequences", "No ΔΔG benchmark; TAPE stability (Spearman) reported", "Chen et al. (2025) <a href=\"https://doi.org/10.1038/s41592-025-02636-z\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1038/s41592-025-02636-z</a>"],
       ["Structure + GNN", "Pythia", "Pythia GNN", "Self-supervised Graph Neural Network (zero-shot)", "PDB structures", "PCC ~0.60; Spearman ρ ~0.62 (S2648 zero-shot)", "Sun et al. (2025) <a href=\"https://doi.org/10.1016/j.xinn.2024.100750\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1016/j.xinn.2024.100750</a>"],
-      ["Structure + GNN", "GeoDDG", "Geometric Deep ΔΔG", "3D geometric deep learning with GeoFitness pretraining", "S2648 and S8754 (training), S669 (test); GeoFitness pretraining on deep mutational scanning data", "Spearman ρ at least 30% above prior state of the art (reported benchmark)", "Xu et al. (2024) <a href=\"https://doi.org/10.1038/s43588-024-00716-2\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1038/s43588-024-00716-2</a>"],
-      ["Structure + GNN", "ThermoMPNN", "–-", "Frozen ProteinMPNN embeddings + light attention + MLP", "Megascale cDNA proteolysis (391,090 filtered single substitutions)", "PCC ~0.75 (Megascale holdout)", "Dieckhaus et al. (2024) <a href=\"https://doi.org/10.1073/pnas.2314853121\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1073/pnas.2314853121</a>"]
+      ["Structure + GNN", "GeoDDG", "Geometric Deep ΔΔG", "3D geometric deep learning with GeoFitness pretraining", "S2648 and S8754 (training), S669 (test); GeoFitness pretraining on deep mutational scanning data", "Spearman ρ = 0.62 (GeoDDG-3D) / 0.60 (GeoDDG-Seq) on S669", "Xu et al. (2024) <a href=\"https://doi.org/10.1038/s43588-024-00716-2\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1038/s43588-024-00716-2</a>"],
+      ["Structure + GNN", "ThermoMPNN", "–-", "Frozen ProteinMPNN embeddings + light attention + MLP", "Megascale cDNA proteolysis (391,090 filtered single substitutions)", "PCC ~0.75 (Megascale holdout)", "Dieckhaus et al. (2024) <a href=\"https://doi.org/10.1073/pnas.2314853121\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1073/pnas.2314853121</a>"],
+["PLM + Structure Hybrid", "MutateEverything", "–-", "Parallel sequence-structure decoding via ESM-2 and AlphaFold backbone", "Mega-scale cDNA proteolysis dataset", "Spearman ρ = 0.56 (S669, single mutations)", "Ouyang-Zhang et al. (2023) <a href=\"https://doi.org/10.48550/arXiv.2311.17316\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">arXiv:2311.17316</a>"],
     ]
   },
   tab2: {
@@ -1105,7 +1129,7 @@ const tablesData = {
       ["PROSTATA", "PLM + deep neural network head", "Transformer representations for ΔΔG prediction", "Own homology-filtered set; Q3421/Q3488 for Ssym only", "Pearson r 0.49 (S669); 0.69 (CV)", "Umerenkov et al. (2023) <a href=\"https://doi.org/10.1093/bioinformatics/btad671\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1093/bioinformatics/btad671</a>"],
       ["SPIRED-Stab", "End-to-end SPIRED structure + GNNs", "Joint ΔΔG and ΔTm prediction from single sequence", "Dual Task Dataset", "ρ 0.58, PCC 0.55 (S669, per-protein means)", "Chen et al. (2024) <a href=\"https://doi.org/10.1038/s41467-024-51776-x\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1038/s41467-024-51776-x</a>"],
       ["xTrimoPGLM", "100B-parameter Transformer", "One of the largest protein language models, with billion-scale pretraining", "Billion-scale sequences", "No ΔΔG benchmark; TAPE stability reported", "Chen et al. (2025) <a href=\"https://doi.org/10.1038/s41592-025-02636-z\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1038/s41592-025-02636-z</a>"],
-      ["Shared-Weight GCN", "Shared-weight graph convolutional net", "Handles diverse mutation types including indels", "Mega-scale cDNA proteolysis dataset", "PCC 0.41 (S462 direct); 0.58 (M28, multi-point)", "Li et al. (2025) <a href=\"https://doi.org/10.1093/bib/bbaf190\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1093/bib/bbaf190</a>"],
+      ["UniMutStab", "Shared-weight graph convolutional net", "Handles diverse mutation types including indels", "Mega-scale cDNA proteolysis dataset", "PCC 0.41 (S462 direct); 0.58 (M28, multi-point)", "Li et al. (2025) <a href=\"https://doi.org/10.1093/bib/bbaf190\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1093/bib/bbaf190</a>"],
       ["GraphESMStable", "PLM + GNN with Epistasis Decoder", "Explicitly models non-additive effects in multi mutations", "Various experimental", "Median Spearman ρ 0.84 (Megascale test); 0.79 (S2648)", "Zhang et al. (2026) <a href=\"https://doi.org/10.64898/2026.01.08.698524\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.64898/2026.01.08.698524</a>"],
       ["Fine-Tuned ESM3", "ESM3 with Low-Rank Adaptation (LoRA)", "Tunable parameter controlling stability vs fitness", "Megascale protease-susceptibility (cDNA display proteolysis) dataset", "Δρavg ≥ +0.068 (double mutants, Megascale test); ρavg 0.573 (Human Domainome 1)", "Reeves & Kalyaanamoorthy (2026) <a href=\"https://www.biorxiv.org/content/10.64898/2026.06.04.730231v1\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.64898/2026.06.04.730231</a>"],
       ["SaProtΔG", "Structure-aware PLM with Foldseek tokens", "Integrates 3D structural tokens into vocabulary", "MGnify cDNA-display stability dataset (~2M sequences)", "Spearman ρ 0.87 (MGnify test set)", "Cho et al. (2025), ICLR 2025 Workshop (GEM); base model: Su et al. (2024) <a href=\"https://doi.org/10.1101/2023.10.01.560349\" target=\"_blank\" rel=\"noopener\" class=\"table-doi-link\">10.1101/2023.10.01.560349</a>"]

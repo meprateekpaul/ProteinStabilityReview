@@ -20,7 +20,7 @@ The purpose of this web portal is to serve as an open-access, interactive scient
 1. **Interactive Model Explorer**: Categorized directory of 35+ computational tools spanning 6 distinct paradigms (Physical/Statistical, Classical ML, 3D Voxel CNNs, Geometric GNNs, Protein Language Models, and Hybrid/Inverse Folding).
 2. **Benchmark Datasets Hub**: Complete catalog of thermodynamic databases, curated regression sets, and high-throughput experimental datasets (including Megascale cDNA proteolysis), with direct DOI links and methodological pitfall advisories.
 3. **Dynamic Benchmark Tables**: Fully searchable, sortable, and filterable web implementations of all 5 manuscript tables (Tables 1–5), complete with live column toggles and CSV/BibTeX export.
-4. **Figure Gallery**: Interactive, zoomable viewers for Figure 1 (Evolution 1990–2026), Figure 2 (Core Paradigms), and Figure 3 (Future Directions).
+4. **Figure Gallery**: Interactive, zoomable viewers for Figures 1 to 4 (Evolution timeline, Systematic benchmarking pitfalls, Input paradigms, and Future directions).
 5. **Direct Primary Literature Citations**: Every single tool, dataset, and metric must link to its authentic primary publication with DOI, author metadata, and a 1-click BibTeX export modal.
 
 ---
