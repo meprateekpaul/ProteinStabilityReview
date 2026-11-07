@@ -20,7 +20,7 @@ The purpose of this web portal is to serve as an open-access, interactive scient
 1. **Interactive Model Explorer**: Categorized directory of 35+ computational tools spanning 6 distinct paradigms (Physical/Statistical, Classical ML, 3D Voxel CNNs, Geometric GNNs, Protein Language Models, and Hybrid/Inverse Folding).
 2. **Benchmark Datasets Hub**: Complete catalog of thermodynamic databases, curated regression sets, and high-throughput experimental datasets (including Megascale cDNA proteolysis), with direct DOI links and methodological pitfall advisories.
 3. **Dynamic Benchmark Tables**: Fully searchable, sortable, and filterable web implementations of all 5 manuscript tables (Tables 1–5), complete with live column toggles and CSV/BibTeX export.
-4. **Figure Gallery**: Interactive, zoomable viewers for Figure 1 (Evolution 1990–2026), Figure 2 (Core Paradigms), and Figure 3 (Future Directions).
+4. **Figure Gallery**: Interactive, zoomable viewers for Figures 1 to 4 (Evolution timeline, Systematic benchmarking pitfalls, Input paradigms, and Future directions).
 5. **Direct Primary Literature Citations**: Every single tool, dataset, and metric must link to its authentic primary publication with DOI, author metadata, and a 1-click BibTeX export modal.
 
 ---
@@ -184,7 +184,7 @@ Every tool included in the web directory must feature full attribution to its or
   * *Primary Reference:* Li, B., Yang, Y. T., Capra, J. A., & Gerstein, M. B. (2020). "Predicting changes in protein thermodynamic stability upon point mutation with deep 3D convolutional neural networks." *PLOS Computational Biology*, 16(11), e1008291.
   * *DOI:* [10.1371/journal.pcbi.1008291](https://doi.org/10.1371/journal.pcbi.1008291)
 * **DeepDDG (2019)**
-  * *Architecture:* Feed-forward neural network built from Shared Residue-Pair (SRP) sub-networks encoding pairwise microenvironment features.
+  * *Architecture:* Neural network trained on more than 5,700 manually curated experimental mutations.
   * *Input:* 3D Structure (PDB).
   * *Reported Metric:* PCC 0.48–0.56 across three independent test sets.
   * *Primary Reference:* Cao, H., Wang, J., He, L., Qi, Y., & Zhang, J. Z. (2019). "DeepDDG: predicting the stability change of protein point mutations using neural networks." *Journal of Chemical Information and Modeling*, 59(4), 1508–1514.
